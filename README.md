@@ -17,6 +17,9 @@ Open the VSCode Extensions panel (Ctrl+Shift+X).
 Search for KeyRunner.
 Click to install the KeyRunner extension.
 
+Marketplace URL : https://marketplace.visualstudio.com/items?itemName=KeyRunner.keyrunner
+Desktop App : Coming soon (Link will be updated)
+
 # How to Use?
 Access KeyRunner from the VSCode activity bar or use the shortcut Ctl+Alt+N.
 Create a new request and configure HTTP methods, URL, headers, query parameters, and request body as needed.
