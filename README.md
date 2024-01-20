@@ -1,4 +1,5 @@
 # API Docs : https://docs.keyrunner.app/
+# Desktop App (Windows & Mac) : https://keyrunner.app 
 
 # KeyRunner - The Zero Trust API Client for VS Code
 
@@ -20,7 +21,7 @@ Search for KeyRunner.
 Click to install the KeyRunner extension.
 
 Marketplace URL : https://marketplace.visualstudio.com/items?itemName=KeyRunner.keyrunner
-Desktop App(Windows & Mac) : https://keyrunner.app
+
 
 # How to Use?
 Access KeyRunner from the VSCode activity bar or use the shortcut Ctl+Alt+N.
