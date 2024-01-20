@@ -20,7 +20,7 @@ Search for KeyRunner.
 Click to install the KeyRunner extension.
 
 Marketplace URL : https://marketplace.visualstudio.com/items?itemName=KeyRunner.keyrunner
-Desktop App : Coming soon (Link will be updated)
+Desktop App(Windows & Mac) : https://keyrunner.app
 
 # How to Use?
 Access KeyRunner from the VSCode activity bar or use the shortcut Ctl+Alt+N.
