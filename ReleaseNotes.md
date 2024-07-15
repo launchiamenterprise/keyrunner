@@ -4,6 +4,7 @@
 - Environment Variables Overlay: New overlay panel to view environment variable values.
 - Scripting Import Capability: Import functionality for pre and post scripts.
 - Parent Level Authorization: Feature to add parent level authorization in the playground.
+- Export Flows in playground
 
 ### Bug Fixes:
 - Content-Type Header: Resolved issue where the Content-Type defaulted to "text/plain".
