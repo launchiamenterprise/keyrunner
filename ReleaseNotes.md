@@ -1,3 +1,14 @@
+# v1.0.57
+
+### New Features
+- **Added mTLS Certificate-Based Authentication**
+  - Enhances security by requiring mutual TLS authentication for more robust client-server communication.
+
+### Bug Fixes
+- **Resolved Content-Length Issue**
+  - Fixed an issue where `text/xml` Content-Type POST requests were incorrectly passing a Content-Length of 0.
+
+
 # V1.0.56
 ### New Features:
 - Expanded HTTP Methods: Added support for more HTTP methods.
