@@ -1,3 +1,18 @@
+# v1.0.60
+
+### New Features
+Theming: Introduced a theming feature to customize the appearance.
+Request Timeout Settings: Added settings for request timeouts at both request level and global level.
+Export Responses: Ability to export responses from a single response or playground.
+
+### Enhancements:
+VS Code Extension: Open the app directly from the activity bar instead of the sidebar.
+Response Body Rendering: Now rendering the response body even when the server returns only an HTTP status code.
+
+### UI Improvements:
+Expandable Body: Adjusted body expansion to use viewport height (VH) for better readability.
+
+
 # v1.0.57
 
 ### New Features
