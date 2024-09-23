@@ -1,3 +1,28 @@
+# Release Notes - v1.0.64
+### New Features
+#### Secret Scanner:
+Introducing Secret Scanner to help identify and manage secrets such as API keys, tokens, and credentials within KeyRunner files. The scanner automatically detects sensitive information and displays it in the UI for easy remediation and management.
+
+#### Collection Level Variables:
+You can now define and manage variables at the collection level. This allows better control and reuse of variables across your workspaces, improving efficiency and consistency in managing environments.
+
+#### GCP, Azure, AWS Secret Store Connectors:
+Added support for Google Cloud Platform (GCP), Azure, and AWS Secret Manager connectors. These integrations allow you to securely manage and access secrets from these cloud providers directly within KeyRunner.
+
+### Bug Fixes
+#### Certificate Management - Minor UI Fixes
+Fixed several minor UI inconsistencies in the Certificate Management module for a smoother user experience.
+
+#### Multiple Sub-Collections - GUI Issue
+Resolved an issue where adding multiple sub-collections would cause the ellipsis menu to disappear. The ellipsis now appears correctly in all scenarios.
+
+#### PUT Call Using Binary Fails
+Fixed an issue where making a PUT call with binary data would return an error ("Something went wrong"). This functionality now works as expected.
+
+#### Imported Environment - Unable to Add Variables
+Resolved a bug preventing users from adding new variables to imported environments.
+
+
 # v1.0.60
 
 ### New Features
