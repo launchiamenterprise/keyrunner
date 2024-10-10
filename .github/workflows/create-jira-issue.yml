@@ -14,18 +14,18 @@ jobs:
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
-          issue_title="${{ github.event.issue.title }}"
-          issue_body="${{ github.event.issue.body }}"
+          issue_title=$(echo "${{ github.event.issue.title }}" | jq -R .)
+          issue_body=$(echo "${{ github.event.issue.body }}" | jq -R .)
           issue_url="${{ github.event.issue.html_url }}"
 
           jira_issue_data=$(cat <<EOF
           {
             "fields": {
               "project": {
-                "key": "KR"
+                "key": "KR" 
               },
-              "summary": "$issue_title",
-              "description": "$issue_body\n\nGitHub Issue: $issue_url",
+              "summary": $issue_title,
+              "description": $issue_body + "\n\nGitHub Issue: $issue_url",
               "issuetype": {
                 "name": "Task"
               },
