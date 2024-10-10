@@ -1,0 +1,42 @@
+name: Create Jira Issue from GitHub Issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  create-jira-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Jira issue
+        env:
+          JIRA_HOST: ${{ secrets.JIRA_HOST }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+        run: |
+          issue_title="${{ github.event.issue.title }}"
+          issue_body="${{ github.event.issue.body }}"
+          issue_url="${{ github.event.issue.html_url }}"
+
+          jira_issue_data=$(cat <<EOF
+          {
+            "fields": {
+              "project": {
+                "key": "KR"
+              },
+              "summary": "$issue_title",
+              "description": "$issue_body\n\nGitHub Issue: $issue_url",
+              "issuetype": {
+                "name": "Task"
+              },
+              "labels": ["github-issue", "auto-created"]
+            }
+          }
+          EOF
+          )
+
+          curl -X POST \
+            --url "$JIRA_HOST/rest/api/3/issue" \
+            --user "$JIRA_EMAIL:$JIRA_API_TOKEN" \
+            --header 'Content-Type: application/json' \
+            --data "$jira_issue_data"
