@@ -44,7 +44,7 @@ jobs:
                       "content": [
                         {
                           "type": "text",
-                           "text": "'"${ISSUE_BODY}"'\n\nGitHub Issue ID: '"${GITHUB_ISSUE_URL}"'"
+                           "text": "Please go thru this for more info \n \n GitHub Issue ID: '"${GITHUB_ISSUE_URL}"'"
                         }
                       ]
                     }
