@@ -14,18 +14,20 @@ jobs:
 
       - name: Create Jira Ticket
         env:
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
         run: |
           ISSUE_TITLE="${{ github.event.issue.title }}"
           ISSUE_BODY="${{ github.event.issue.body }}"
           ISSUE_USER="${{ github.event.issue.user.login }}"
           GITHUB_ISSUE_ID="${{ github.event.issue.number }}"
-          GITHUB_ISSUE_URL="https://github.com/keyrunner/datapane-node/issues/${GITHUB_ISSUE_ID}"
+          GITHUB_ISSUE_URL="https://github.com/launchiamenterprise/keyrunner/issues/${GITHUB_ISSUE_ID}"
           PRIORITY_ID="2"
           
           curl -X POST \
-            --url "https://keyrunner.atlassian.net/rest/api/3/issue" \
-            --user "ravi.b@keyrunner.app:$JIRA_API_TOKEN" \
+            --url "$JIRA_URL/rest/api/3/issue" \
+            --user "$JIRA_EMAIL:$JIRA_API_TOKEN" \
             --header 'Content-Type: application/json' \
             --data '{
               "fields": {
