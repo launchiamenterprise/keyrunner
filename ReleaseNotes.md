@@ -1,4 +1,7 @@
-# Release Notes - v1.0.64
+
+# v1.0.67 (2024-10-11)
+
+# v1.0.64 (2024-10-01)
 ### New Features
 #### Secret Scanner:
 Introducing Secret Scanner to help identify and manage secrets such as API keys, tokens, and credentials within KeyRunner files. The scanner automatically detects sensitive information and displays it in the UI for easy remediation and management.
