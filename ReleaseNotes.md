@@ -1,4 +1,4 @@
-# v1.0.68 (2024-10-21)
+# v1.0.69 (2024-10-21)
 ## Features:
 1. **Collections' Folder State**: The state of opened folders within Collections is now retained.
 2. **Version Check**: Added an easy way to check for new version releases and their release notes.
@@ -16,10 +16,13 @@
 5. **Postman Collection Import**: Resolved issue where importing a Postman collection didn’t import the included collection’s variables.
 6. **Empty Environment Variables**: Fixed bug that generated thousands of empty key/value environment variables after running a request containing Pre-Script.
 7. **Incorrect URL**: Corrected an issue where URLs were incorrect when one of the parameter values contained an `=` as a substring.
-8. **Nav Dropdown Labels**: Restored missing labels on the two main centered select boxes (dropdowns) in the top navigation.
-9. **"Check for Updates"**: Fixed broken functionality in the "KeyRunner" menu's "Check for Updates" option.
 
-# v1.0.67 (2024-10-11)
+
+# v1.0.68 (2024-10-11)
+## Bug Fixes:
+1. **"Check for Updates"**: Fixed broken functionality in the "KeyRunner" menu's "Check for Updates" option.
+2. **Nav Dropdown Labels**: Restored missing labels on the two main centered select boxes (dropdowns) in the top navigation.
+
 
 # v1.0.64 (2024-10-01)
 ### New Features
