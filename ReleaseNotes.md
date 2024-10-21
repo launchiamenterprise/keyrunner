@@ -1,3 +1,23 @@
+# v1.0.68 (2024-10-21)
+## Features:
+1. **Collections' Folder State**: The state of opened folders within Collections is now retained.
+2. **Version Check**: Added an easy way to check for new version releases and their release notes.
+3. **JSON Request Comments**: Added support for commenting out specific JSON parameters in the request body.
+4. **Tab Status Indicators**: Introduced status indicators to highlight when a request tab contains data.
+5. **Console Enhancements**: Various improvements and enhancements to the Console for a better user experience.
+6. **OAuth Redirect Update**: OAuth redirect is now supported via the following endpoint: https://api.keyrunner.app/v1/oauthRedirect
+7. **Script Functionality**: General improvements to scripting functionality.
+   
+## Bug Fixes:
+1. **Request Body Variables**: Resolved issue where variables were not taking the latest values set through Pre-Script execution.
+2. **Pre-Script Performance**: Improved performance of  Pre-Script execution.
+3. **Pre-Script JS Error Reporting**: Fixed issue where Pre-Script JS execution errors were not showing in the Keyrunner Console (now includes error details like JS error and line number).
+4. **OAuth Redirect**: Fixed issue where OAuth redirect was not accepted by the identity provider.
+5. **Postman Collection Import**: Resolved issue where importing a Postman collection didn’t import the included collection’s variables.
+6. **Empty Environment Variables**: Fixed bug that generated thousands of empty key/value environment variables after running a request containing Pre-Script.
+7. **Incorrect URL**: Corrected an issue where URLs were incorrect when one of the parameter values contained an `=` as a substring.
+8. **Nav Dropdown Labels**: Restored missing labels on the two main centered select boxes (dropdowns) in the top navigation.
+9. **"Check for Updates"**: Fixed broken functionality in the "KeyRunner" menu's "Check for Updates" option.
 
 # v1.0.67 (2024-10-11)
 
