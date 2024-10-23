@@ -24,11 +24,11 @@ jobs:
           GITHUB_ISSUE_ID="${{ github.event.issue.number }}"
           GITHUB_ISSUE_URL="https://github.com/launchiamenterprise/keyrunner/issues/${GITHUB_ISSUE_ID}"
           PRIORITY_ID="2"
-          echo "ISSUE_TITLE=${ISSUE_TITLE}" >> $GITHUB_ENV
-          echo "ISSUE_BODY=${ISSUE_BODY}" >> $GITHUB_ENV
-          echo "ISSUE_USER=${ISSUE_USER}" >> $GITHUB_ENV
-          echo "GITHUB_ISSUE_ID=${GITHUB_ISSUE_ID}" >> $GITHUB_ENV
-          echo "GITHUB_ISSUE_URL=${GITHUB_ISSUE_URL}" >> $GITHUB_ENV
+          echo "ISSUE_TITLE=$(echo "$ISSUE_TITLE" | tr -d '\r\n' | xargs)" >> $GITHUB_ENV
+          echo "ISSUE_BODY=$(echo "$ISSUE_BODY" | tr -d '\r\n' | xargs)" >> $GITHUB_ENV
+          echo "ISSUE_USER=$(echo "$ISSUE_USER" | tr -d '\r\n' | xargs)" >> $GITHUB_ENV
+          echo "GITHUB_ISSUE_ID==$(echo "$GITHUB_ISSUE_ID" | tr -d '\r\n' | xargs)" >> $GITHUB_ENV
+          echo "GITHUB_ISSUE_URL==$(echo "$GITHUB_ISSUE_URL" | tr -d '\r\n' | xargs)" >> $GITHUB_ENV
           echo "PRIORITY_ID=${PRIORITY_ID}" >> $GITHUB_ENV
           
           
