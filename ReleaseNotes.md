@@ -1,3 +1,13 @@
+# v1.0.70 (2024-10-24)
+## Bug Fixes
+1. **Console Error Resolved**: Fixed an error that appeared in the console after executing a request in the previous version - v1.0.69. 
+2. **History Feature minor bug**: The "History" feature in the left navigation created an empty json file in an edge case which is now fixed. 
+3. **Request Body Variables Update**: Addressed the issue where request body variables were not reflecting the latest values set through Pre-Script execution.
+
+## UX Improvements
+1. **Enhanced Request Tab Visual Indicators**: Added additional visual status indicators to the request tabs. These indicators will now clearly show when a tab contains data.
+
+
 # v1.0.69 (2024-10-21)
 ## Features:
 1. **Collections' Folder State**: The state of opened folders within Collections is now retained.
