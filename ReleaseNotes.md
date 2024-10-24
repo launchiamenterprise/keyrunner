@@ -1,4 +1,4 @@
-# v1.0.70 (2024-10-24)
+# v1.0.70
 ## Bug Fixes
 1. **Console Error Resolved**: Fixed an error that appeared in the console after executing a request in the previous version - v1.0.69. 
 2. **History Feature minor bug**: The "History" feature in the left navigation created an empty json file in an edge case which is now fixed. 
