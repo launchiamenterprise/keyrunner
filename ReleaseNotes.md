@@ -1,3 +1,17 @@
+# v1.0.71 (2024-11-05)
+## New Features
+- **Support Collection Run**: Added the ability to run entire collections, enabling users to execute multiple requests in sequence.
+- **Playground Variables**: Introduced support for playground variables, enhancing flexibility for customization and testing.
+- **Pre and Post Scripts in Playground**: Enabled pre and post-request scripts in the playground to allow more complex workflows and conditional testing.
+
+## Enhancements
+- **Console UI with JSON Logs**: Upgraded the console UI to support JSON-formatted logs, providing a structured view for easier debugging and analysis.
+- **AWS Secret Store Integration**: Added a `secretName` field for AWS secret store functionality.
+
+## Bug Fixes
+- **Cookie Functionality**: Setting Cookies for HTTP response of 302 status code.
+
+
 # v1.0.70
 ## Bug Fixes
 1. **Console Error Resolved**: Fixed an error that appeared in the console after executing a request in the previous version - v1.0.69. 
