@@ -1,3 +1,7 @@
+# v1.0.72 (2024-11-15)
+## Patch
+https://github.com/launchiamenterprise/keyrunner/issues/95
+
 # v1.0.71 (2024-11-05)
 ## New Features
 - **Support Collection Run**: Added the ability to run entire collections, enabling users to execute multiple requests in sequence.
