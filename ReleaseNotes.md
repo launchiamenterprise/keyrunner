@@ -1,3 +1,17 @@
+# v1.0.74 (2025-01-21)
+## New Features
+- **User Management**:  
+  Introduced user management functionality to enhance user role and access control.
+- **Test Functionality in Scripts**:  
+  Added the ability to include pre and post-test scripts .(https://github.com/launchiamenterprise/keyrunner/issues/99)
+- **SSL Verification**:  
+  Implemented support for using system certificates for SSL verification.
+
+## Bug Fixes
+- **Environment Variables**:  
+  Fixed an issue where null values were not allowed in environment variable values.(https://github.com/launchiamenterprise/keyrunner/issues/100)
+
+   
 # v1.0.72 (2024-11-15)
 ## Patch
 https://github.com/launchiamenterprise/keyrunner/issues/95
