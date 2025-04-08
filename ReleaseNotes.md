@@ -1,3 +1,29 @@
+## v1.0.78 (2025-04-08)
+### Enhancements:
+- OWASP API Top 10 checks: Validate requests against common security issues
+- Minor UI enhancements.
+- Added a modal for reporting issues on Github directly from home screen.
+
+---
+
+## v1.0.77 (2025-04-03)
+### Bug Fix:
+- Hotfix for issue with running multiple iterations in a collection.
+
+---
+
+## v1.0.76 (2025-03-27)
+### Enhancements:
+- Sensedia API management Integration.
+- Vault enhancement: Support for multiple vaults.
+- Git enhancements: Commit changes, fetch, and clone.
+- Support for nested variables in imported collections.
+- Git integration now supports branch selection.
+
+### Bug Fixes:
+- Fixed issue with auto-updater.
+
+---
 # v1.0.74 (2025-01-21)
 ## New Features
 - **User Management**:  
@@ -11,7 +37,7 @@
 - **Environment Variables**:  
   Fixed an issue where null values were not allowed in environment variable values.(https://github.com/launchiamenterprise/keyrunner/issues/100)
 
-   
+--- 
 # v1.0.72 (2024-11-15)
 ## Patch
 https://github.com/launchiamenterprise/keyrunner/issues/95
@@ -29,7 +55,7 @@ https://github.com/launchiamenterprise/keyrunner/issues/95
 ## Bug Fixes
 - **Cookie Functionality**: Setting Cookies for HTTP response of 302 status code.
 
-
+---
 # v1.0.70
 ## Bug Fixes
 1. **Console Error Resolved**: Fixed an error that appeared in the console after executing a request in the previous version - v1.0.69. 
@@ -39,7 +65,7 @@ https://github.com/launchiamenterprise/keyrunner/issues/95
 ## UX Improvements
 1. **Enhanced Request Tab Visual Indicators**: Added additional visual status indicators to the request tabs. These indicators will now clearly show when a tab contains data.
 
-
+---
 # v1.0.69 (2024-10-21)
 ## Features:
 1. **Collections' Folder State**: The state of opened folders within Collections is now retained.
@@ -59,13 +85,13 @@ https://github.com/launchiamenterprise/keyrunner/issues/95
 6. **Empty Environment Variables**: Fixed bug that generated thousands of empty key/value environment variables after running a request containing Pre-Script.
 7. **Incorrect URL**: Corrected an issue where URLs were incorrect when one of the parameter values contained an `=` as a substring.
 
-
+---
 # v1.0.68 (2024-10-11)
 ## Bug Fixes:
 1. **"Check for Updates"**: Fixed broken functionality in the "KeyRunner" menu's "Check for Updates" option.
 2. **Nav Dropdown Labels**: Restored missing labels on the two main centered select boxes (dropdowns) in the top navigation.
 
-
+---
 # v1.0.64 (2024-10-01)
 ### New Features
 #### Secret Scanner:
@@ -90,7 +116,7 @@ Fixed an issue where making a PUT call with binary data would return an error ("
 #### Imported Environment - Unable to Add Variables
 Resolved a bug preventing users from adding new variables to imported environments.
 
-
+---
 # v1.0.60
 
 ### New Features
@@ -104,7 +130,7 @@ Response Body Rendering: Now rendering the response body even when the server re
 
 ### UI Improvements:
 Expandable Body: Adjusted body expansion to use viewport height (VH) for better readability.
-
+---
 
 # v1.0.57
 
