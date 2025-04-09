@@ -1,3 +1,29 @@
+# v1.0.79 (2025-04-09)
+## Features
+
+- **Environment Variables Sharing**  
+  Added ability to share non-sensitive environment variables.
+
+- **Sensitive Values Protection**  
+  Env vars are now obfuscated by default after saving. Users can toggle visibility with a "peek" button.
+
+##  Bug Fixes
+
+- **Vault Connection**  
+  Fixed issue where the app failed to connect to Google Secret Manager if any secret was blank.  
+  Error thrown: *“invalid secret”* — now resolved.
+
+## Enterprise Fixes
+
+- **Workspace Dropdown Improvements**  
+  Workspace dropdown now displays both name and scope (local/project) for better clarity.
+
+- **Console Output Feedback**  
+  Initial tuning based on early feedback. Will iterate further with more concrete suggestions.
+---
+
+
+
 ## v1.0.78 (2025-04-08)
 ### Enhancements:
 - OWASP API Top 10 checks: Validate requests against common security issues
