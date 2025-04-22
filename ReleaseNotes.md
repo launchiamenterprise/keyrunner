@@ -1,3 +1,35 @@
+
+
+# v1.0.81 (2025-04-23)
+
+## Features
+
+- **Timeline for Requests, Workspaces, and Projects - Enterprise only**  
+  Added a unified timeline view to track activity across requests, workspaces, and projects.
+
+- **Collection-Level OWASP Validator**  
+  Built-in security validator at the collection level to help catch common OWASP issues early.
+
+## Enhancements
+
+- **Secrets Access Logging - Enterprise only**  
+  Secret access logs now include the user ID for better traceability.
+
+---
+# v1.0.80 (2025-04-16)
+
+## Features
+
+- **Magic Link Login for Non-SSO Tenants - Enterprise only**  
+  Introduced magic link authentication flow for users not using SSO — simpler, secure access.
+
+## Enhancements
+
+- **Custom Libraries in Scripts**  
+  Users can now import and use their own libraries in scripts for more flexibility.
+
+---
+
 # v1.0.79 (2025-04-09)
 ## Features
 
