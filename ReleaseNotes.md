@@ -1,5 +1,34 @@
+# v1.0.82 (2025-05-27)
 
+## Features
 
+- **Collection Export - Variables**  
+Users can now export variables along with collections.
+
+- **Workspace-Aware Secret Scanner**  
+The secret scanner now correctly scopes scanning to the selected workspace instead of defaulting.
+
+## Enterprise Only
+
+- **Admin Dashboard (UI + API)** 
+Introduced a new admin dashboard to help manage tenants and system-wide configurations more efficiently.
+
+- **Tenant Scoped Redacted Strings**  
+Tenant admins can now manage redacted strings at the tenant level.
+
+- **Data Masking Enhancements for Projects**  
+Projects now combine both project-level and tenant-level redacted strings for accurate data masking.
+
+- **SAML Session Token API**  
+A new endpoint for exchanging SAML tokens and receiving session tokens.
+
+- **Environment Variables Tracking**  
+Now tracks and reports the number of environment variables vs KCSV variables used per user.
+
+- **Ephemeral Adhoc KeyConnector Responses**  
+Adhoc request response data (including logs) is now auto-deleted after 5 minutes to reduce data persistence risks.
+
+---
 # v1.0.81 (2025-04-23)
 
 ## Features
