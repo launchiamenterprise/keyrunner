@@ -1,3 +1,27 @@
+## v1.0.83 (2025-07-14)
+
+### Features
+- **Magic Link Based SSO**  
+  Support added for passwordless sign-in using magic links.
+
+### Bug Fixes
+
+**Enterprise Version**
+- Fixed issue where users couldn’t be removed from a project once added.
+- “Manage” button now correctly appears for Project Admins and Editors.
+- Added filter and search capability for user management.
+- Fixed bug in delete request flow.
+
+**Non-Enterprise Version**
+- Beautify request body for better readability.
+- mTLS support now accepts URLs via environment variables.
+
+### Internal
+- CI/CD pipeline added for releasing new app versions.
+- Improved UI test automation coverage.
+
+---
+
 # v1.0.82 (2025-05-27)
 
 ## Features
