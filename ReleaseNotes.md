@@ -1,3 +1,48 @@
+## v1.0.84 (2025-08-06)
+
+### Features
+- **Playground V2**  
+  Introduced the next iteration of the Playground with UI and UX enhancements.
+
+- **Environment Variable Suffix Removed**  
+  Variable syntax no longer requires `::SensitiveEnv` or `::NonSensitiveEnv` suffixes.  
+  Backward compatible: existing variables using old suffixes will still resolve correctly. Applies to environment variables, collection variables, and request flow variables.
+
+- **Improved Collection Run Output**  
+  Collection run now includes a “View Test Results” option. Minor UI changes introduced to support this.
+
+- **Resolved Variable Expansion in Code Snippets**  
+  When environment variables are used in the request base URL, code snippets now show the resolved full URL.
+
+### Bug Fixes
+
+**Enterprise Version**
+- Fixed missing scroll bar in logs view.
+- “Enable Git” button is now visible at the bottom.
+- Fixed infinite loading issue when request flow validation fails.
+- Fixed layout issue where search bar breaks when side panel is resized to minimum width.  
+  [#117](https://github.com/launchiamenterprise/keyrunner/issues/117)
+- Fixed bug where variables were not resolving as expected in recent versions.  
+  [#113](https://github.com/launchiamenterprise/keyrunner/issues/113)
+- Resolved issue where all Playground actions ran at once instead of sequentially.  
+  [#112](https://github.com/launchiamenterprise/keyrunner/issues/112)
+- Fixed Playground flow bug causing incorrect execution behavior.  
+  [#110](https://github.com/launchiamenterprise/keyrunner/issues/110)
+- Added beautifier for JSON request body to improve readability.  
+  [#82](https://github.com/launchiamenterprise/keyrunner/issues/82)
+
+**Non-Enterprise Version**
+- N/A
+
+### Internal
+- Partial enhancements implemented for flow actions.  
+  [#111](https://github.com/launchiamenterprise/keyrunner/issues/111)
+- Closed as intended behavior:  
+  [#102](https://github.com/launchiamenterprise/keyrunner/issues/102)  
+  [#16](https://github.com/launchiamenterprise/keyrunner/issues/16)
+
+---
+
 ## v1.0.83 (2025-07-14)
 
 ### Features
