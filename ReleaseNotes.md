@@ -2,16 +2,16 @@
 
 ## Bug Fixes
 
-- Fixed issue with **authorization inheritance** – endpoints now correctly inherit authorization from parent folders. Previously, selecting "inherit from parent" would fail and throw an exception.  
+- Fixed issue with **authorization inheritance** – Fixed authorization inheritance issue to display correct error message instead of failing silently.  
 - Resolved **folder permissions** inconsistencies.  
 - Fixed issue with **environment variable refresh** during insertion from scripts.  
 - Corrected behavior for **query search params overwrite** – editing at the URL level no longer erases unselected query params, ensuring documentation remains consistent in shared collections.  
-- Fixed **filter and sort** functionality in **Private/Project workspace Manage Users**.  
-- Resolved **duplicate workspace name issue** – users can no longer create workspaces with identical names.  
+- **[Enterprise]** Fixed **filter and sort** functionality in **Private/Project workspace Manage Users**.  
+- **[Enterprise]** Resolved **duplicate workspace name issue** – users can no longer create workspaces with identical names.  
 - Fixed **OpenAPI Spec export** issue
   ([#119](https://github.com/launchiamenterprise/keyrunner/issues/119)).  
-- Fixed issue where **KCSV was not refreshed** when switching projects.  
-- Resolved issue when **assigning a role with filters applied** – dropdown now correctly allows role selection even when a filter is active.  
+- **[Enterprise]** Fixed issue where **KCSV was not refreshed** when switching projects.  
+- **[Enterprise]** Resolved issue when **assigning a role with filters applied** – dropdown now correctly allows role selection even when a filter is active.  
 
 ## Features
 
