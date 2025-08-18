@@ -1,3 +1,32 @@
+## v1.0.85 (2025-08-18)
+
+## Bug Fixes
+
+- Fixed issue with **authorization inheritance** – endpoints now correctly inherit authorization from parent folders. Previously, selecting "inherit from parent" would fail and throw an exception.  
+- Resolved **folder permissions** inconsistencies.  
+- Fixed issue with **environment variable refresh** during insertion from scripts.  
+- Corrected behavior for **query search params overwrite** – editing at the URL level no longer erases unselected query params, ensuring documentation remains consistent in shared collections.  
+- Fixed **filter and sort** functionality in **Private/Project workspace Manage Users**.  
+- Resolved **duplicate workspace name issue** – users can no longer create workspaces with identical names.  
+- Fixed **OpenAPI Spec export** issue
+  ([#119](https://github.com/launchiamenterprise/keyrunner/issues/119)).  
+- Fixed issue where **KCSV was not refreshed** when switching projects.  
+- Resolved issue when **assigning a role with filters applied** – dropdown now correctly allows role selection even when a filter is active.  
+
+## Features
+
+- Added **API_KEY** option for authentication
+([#118](https://github.com/launchiamenterprise/keyrunner/issues/118)).  
+- Added ability to **export test results in Playground**.  
+- Added option to **copy logs from console**.  
+
+## Internal
+
+- Added **CI pipeline step** to run unit and integration test cases.  
+- Expanded **integration test coverage** to improve stability.  
+- Added more **end-to-end (e2e) test cases** to validate the application.
+
+---  
 ## v1.0.84 (2025-08-06)
 
 ### Features
