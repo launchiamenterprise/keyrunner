@@ -1,3 +1,16 @@
+## v1.0.86 (2025-08-25)
+
+## Bug Fixes
+- Fixed issue with **VSCode login from behind corporate firewalls**, ensuring authentication works seamlessly in restricted environments.  
+
+## Features
+- Substantially reduced **desktop app build size**, improving installation speed and storage efficiency.  
+
+## Internal
+- Upgraded **Kubernetes** and **Kafka** clusters to latest stable versions for improved reliability and performance.  
+- Streamlined **automation processes** using Terraform for more consistent and maintainable infrastructure management.  
+
+
 ## v1.0.85 (2025-08-18)
 
 ## Bug Fixes
