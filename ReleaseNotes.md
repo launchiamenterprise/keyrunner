@@ -1,3 +1,15 @@
+## v1.0.88 (2025-09-16)
+
+## Bug Fixes
+- Added support for **empty keys in Basic Auth**, ensuring broader compatibility with edge cases.  
+- Fixed **corporate firewall login issues** by filtering out expired system certificates.  
+- Improved security by preventing **secrets from being displayed in the console** when passed as query parameters or path variables.  
+
+## Features
+- Released **Playground V2**, now supporting conditions, loops, and scripts for more advanced workflows.  
+  
+---
+
 ## v1.0.86 (2025-08-25)
 
 ## Bug Fixes
@@ -10,6 +22,7 @@
 - Upgraded **Kubernetes** and **Kafka** clusters to latest stable versions for improved reliability and performance.  
 - Streamlined **automation processes** using Terraform for more consistent and maintainable infrastructure management.  
 
+---
 
 ## v1.0.85 (2025-08-18)
 
