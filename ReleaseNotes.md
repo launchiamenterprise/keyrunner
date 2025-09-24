@@ -1,3 +1,18 @@
+## v1.0.89 (2025-09-25)
+
+## Bug Fixes
+- Addressed multiple **security-related fixes** across the client and backend.  
+- Resolved issue [#122](https://github.com/launchiamenterprise/keyrunner/issues/122)
+- Resolved issue [#116](https://github.com/launchiamenterprise/keyrunner/issues/116) 
+- Resolved issue [#72](https://github.com/launchiamenterprise/keyrunner/issues/72) 
+- Partially fixed [#111](https://github.com/launchiamenterprise/keyrunner/issues/111): (completed fixes are reflected in the issue checklist).  
+- Partially fixed [#5](https://github.com/launchiamenterprise/keyrunner/issues/5): (only the resolved checklist items are included in this release).  
+
+## Security
+- Completed **Vulnerability Assessment and Penetration Testing (VAPT)** of the infrastructure and application.  
+- Closed high-priority findings from recent security testing, further strengthening platform resilience.  
+
+---
 ## v1.0.88 (2025-09-16)
 
 ## Bug Fixes
