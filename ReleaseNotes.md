@@ -1,3 +1,19 @@
+## v1.0.90 (2025-10-13)
+
+## Enhancements
+- Added ability to **rearrange the order** of query parameters and headers.  
+- Implemented **column resizing** support for query parameters and headers.  
+- Introduced **warning indicators** for duplicate keys in query parameters or headers.  
+- Upgraded **Node.js version**.  
+
+## Security
+- Applied additional **security hardening measures** in client and API layers.  
+- Updated dependencies.  
+
+## Bug Fixes
+- Fixed issue where **unselected query parameters** were still appearing in the generated URL.  
+
+---
 ## v1.0.89 (2025-09-25)
 
 ## Bug Fixes
