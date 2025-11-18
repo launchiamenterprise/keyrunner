@@ -1,3 +1,22 @@
+## v1.0.92 (2025-11-18)
+
+## Enhancements
+- Added integration with **1Password** for smoother credential management.
+- Introduced a **search feature** for environment variables to improve navigation and usability.
+
+## Bug Fixes
+- Prevented imports of collections and environments when the **workspace field is empty**.
+- Added **line numbers** for scripts in console logs to aid debugging.
+- Ensured **collections and requests are removed** when a workspace is deleted.
+- Corrected the **delay issue** in code snippets.
+- Addressed several **UI related bugs** and applied minor improvements.
+
+---
+## v1.0.91 (2025-11-13)
+## Bug Fixes
+- Addressed several **UI related bugs** and applied minor improvements.
+
+---
 ## v1.0.90 (2025-10-13)
 
 ## Enhancements
