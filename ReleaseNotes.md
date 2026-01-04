@@ -1,3 +1,29 @@
+## v1.0.93 (2025-12-20)
+
+## Enhancements
+- Added support to **publish mock servers for external use** with secure, controlled access.
+  - Mock servers in **Private** and **Public** workspaces can be published.
+  - Mock servers in **Local** workspaces cannot be published to ensure data remains local.
+  - Mock servers are **not published by default**.
+  - A **Workspace Admin or Editor** must explicitly publish a mock server.
+  - Once published:
+    - The mock server URL becomes publicly accessible.
+    - A secure access token is generated.
+    - Requests must include the header `x-api-token: <your-token>`.
+  - Each published mock server includes **Token Management**, allowing:
+    - Token creation
+    - Token revocation
+    - Token rotation
+- Added **authorization support for WebSocket requests**.
+  - Authorization headers can be included during the WebSocket handshake.
+  - Supports common authentication methods such as bearer tokens.
+  - Removes the need for external workarounds when testing authenticated WebSockets.
+
+## Bug Fixes
+- Applied multiple **bug fixes** across the platform.
+- Improved overall **stability, performance, and reliability**.
+
+---
 ## v1.0.92 (2025-11-18)
 
 ## Enhancements
