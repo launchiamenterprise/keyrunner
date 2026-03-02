@@ -1,3 +1,206 @@
+## V1.0.94 (2026-03-02)
+
+## Enhancements
+
+### 1. Collection-Level Scripts
+
+Collections now support **Pre-Scripts** and **Post-Scripts**, giving you the ability to run JavaScript logic before or after every request in a collection — without having to duplicate script logic across individual requests.
+
+**How it works:**
+
+- Open any collection and navigate to the **Scripts** tab.
+- Write a **Pre-Script** to execute logic before each request in the collection fires (e.g., set auth tokens, inject headers, resolve dynamic variables).
+- Write a **Post-Script** to execute logic after each request completes (e.g., validate response structure, chain data to the next request, log results).
+- Collection-level scripts run in addition to any request-level scripts. The execution order is:
+  1. Collection Pre-Script
+  2. Request Pre-Script
+  3. Request executes
+  4. Request Post-Script
+  5. Collection Post-Script
+
+**Why it matters:**
+Previously, teams had to copy the same boilerplate auth or token-refresh logic into every single request's script. With collection-level scripts, you write it once at the collection and it applies to all requests inside it automatically.
+
+---
+
+### 2. Reusable Global Script Libraries
+
+KeyRunner now supports a **Script Library** — a workspace-level store of reusable JavaScript modules that can be imported into any script (collection scripts, request scripts, or other library scripts).
+
+**How it works:**
+
+- Access the Script Library from the bottom navigation panel.
+- Create a new library by clicking the **+** icon and giving it a name.
+- Write your reusable functions inside the library and export them using Node.js module syntax:
+
+```javascript
+// my-library
+function getAuthHeader(token) {
+  return `Bearer ${token}`;
+}
+
+module.exports = { getAuthHeader };
+```
+
+- To use the library in any script, import it with `kr.require`:
+
+```javascript
+const myLib = await kr.require('my-library');
+const header = myLib.getAuthHeader(kr.environment.get('token'));
+kr.request.setHeader('Authorization', header);
+```
+
+- The **Libraries** picker button (shown in the script editor toolbar) lets you browse and insert the `kr.require` import statement without typing it manually.
+- Use the **copy** icon next to the library name to copy it to your clipboard for quick referencing.
+- Libraries are scoped to your workspace and automatically available to all members.
+
+**Why it matters:**
+Eliminates duplication of utility functions like token generators, retry helpers, and response validators. One change to the library propagates everywhere it is used.
+
+---
+
+### 3. Kafka Integration
+
+KeyRunner now supports **Apache Kafka** as a first-class connection type, enabling you to produce and consume messages from Kafka topics directly from the app.
+
+#### Getting Started
+
+1. Access **Kafka** from Connectors in bottom pannel.
+2. Enter a **name** for your connection and the **broker addresses** (comma-separated, e.g., `broker1:9092, broker2:9092`).
+3. Configure authentication if your cluster requires it (see below).
+4. Click **Connect** to establish the connection.
+5. Once connected, you can produce and consume messages from topics.
+
+#### Producing Messages
+
+- Switch to the **Message** tab.
+- Select an existing topic from the dropdown (populated automatically when you connect) or click **Add Topic** to create a new one.
+- Choose the message format — **JSON** or **TEXT** — and compose your message in the editor.
+- Click **Send** to publish the message to the selected topic.
+
+#### Consuming Messages
+
+- The **Response** panel (bottom half of the split view) shows incoming messages from a subscribed topic in real time.
+- Select a topic from the consumer dropdown to start receiving messages.
+- Use the **Clear Logs** button to reset the message stream.
+
+#### Supported Authentication Mechanisms
+
+KeyRunner supports the full range of Kafka SASL authentication options:
+
+| Mechanism         | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| **None**          | Unauthenticated / plaintext brokers                      |
+| **PLAIN**         | Username + Password over SASL/PLAIN                      |
+| **SCRAM-SHA-256** | Username + Password using SCRAM-SHA-256                  |
+| **SCRAM-SHA-512** | Username + Password using SCRAM-SHA-512                  |
+| **AWS IAM (MSK)** | AWS Managed Streaming for Kafka using IAM authentication |
+
+**AWS IAM (MSK) — Profile Mode:**
+Uses your local AWS credential chain (environment variables, `~/.aws/credentials`, or AWS SSO). Optionally specify a named AWS CLI profile. No credentials are stored in KeyRunner — a short-lived signed token is generated on each connection.
+
+```
+# Setup steps:
+1. Install AWS CLI:  brew install awscli
+2. Configure profile:  aws configure --profile my-msk-profile
+3. For SSO:  aws configure sso --profile my-msk-profile
+            aws sso login --profile my-msk-profile
+4. Ensure IAM role has kafka-cluster:Connect permission on the MSK cluster ARN
+5. Enter region and (optionally) profile name in KeyRunner
+```
+
+**AWS IAM (MSK) — Access Keys Mode:**
+Provide an IAM Access Key ID, Secret Access Key, and optional Session Token (for STS assumed roles). Credentials are stored encrypted on disk. A signed token is generated per connection — your keys are never sent directly to the broker.
+
+**SSL:**
+SSL is automatically enabled when selecting AWS IAM. For other mechanisms, SSL can be configured independently.
+
+---
+
+### 4. NTLM Authentication
+
+KeyRunner now supports **NTLM** authentication for HTTP requests, enabling testing of APIs secured by Windows-integrated authentication commonly used in enterprise and Active Directory environments.
+
+**How to use:**
+
+1. Open any HTTP request.
+2. Navigate to the **Authorization** tab.
+3. Select **NTLM** from the authentication type dropdown.
+4. Fill in the required fields:
+
+| Field           | Description                                      |
+| --------------- | ------------------------------------------------ |
+| **Username**    | The Windows/AD username                          |
+| **Password**    | The user's password                              |
+| **Domain**      | The Windows domain (required for most AD setups) |
+| **Workstation** | The workstation name (optional)                  |
+
+5. Send the request — KeyRunner handles the NTLM handshake (challenge/response negotiation) automatically.
+
+**Why it matters:**
+NTLM is widely used in corporate environments, particularly for internal APIs, SharePoint, and legacy Windows services. Until now, testing these endpoints required external tools. Resolves [GitHub issue #127](https://github.com/launchiamenterprise/keyrunner/issues/127).
+
+---
+
+### 5. Workspace Admin: Enable / Disable Collection Export
+
+Workspace admins of **Private** and **Project** workspaces can now control whether members are allowed to export collections.
+
+**How to use:**
+
+1. Open your workspace settings (click the workspace name → **Manage Workspace**).
+2. Under **Workspace Settings**, find the **Allow Collection Export** toggle.
+3. Toggle it on or off:
+   - **On** — workspace members can export collections in all formats (JSON, Postman, OpenAPI, etc.).
+   - **Off** — export options are hidden/disabled for non-admin members.
+
+**Who can change this?**
+Only workspace members with the **ADMIN** role can see and modify this setting. It is available on **Private** and **Project** workspace types.
+
+**Why it matters:**
+Organizations with strict IP or data policies can now prevent unauthorized export of API definitions and test collections, while still allowing members to collaborate on requests. Resolves [GitHub issue #123](https://github.com/launchiamenterprise/keyrunner/issues/123).
+
+---
+
+## Bug Fixes
+
+### Validate Request Now Respects Variable Values (Issue #121)
+
+**Problem:** When using **Validate Request**, the validator was treating variable references (e.g., `{{base_url}}`) as literal strings instead of resolving them to their actual values from the active environment. This caused false validation failures for URLs, headers, and body fields that used environment variables.
+
+**Fix:** The validation engine now resolves all variable references against the active environment before running validation checks. Variables defined in the environment, collection, or global scope are correctly substituted before validation is applied.
+
+Resolves [GitHub issue #121](https://github.com/launchiamenterprise/keyrunner/issues/121).
+
+---
+
+### Postman Collection Import: Request URL Now Included (Issue #120)
+
+**Problem:** When importing a KeyRunner JSON collection into Postman format, the exported file was missing the `url` field on requests. This caused imported requests in Postman to appear with blank URLs, requiring manual re-entry.
+
+**Fix:** The Postman collection exporter now correctly maps the request URL (including path, query parameters, and protocol) to the Postman `url` object format in the exported JSON.
+
+Resolves [GitHub issue #120](https://github.com/launchiamenterprise/keyrunner/issues/120).
+
+---
+
+## Improvements
+
+### Performance: Collection Export for Private and Project Workspaces
+
+Significant performance improvements have been made to the collection export pipeline for Private and Project workspaces. Collections with large numbers of requests, nested folders, and environment variables now export substantially faster, with reduced memory overhead.
+
+### OpenAPI Spec and Postman Collection Import / Export
+
+Multiple reliability and fidelity improvements across the import/export pipeline:
+
+- **OpenAPI import** — Improved parsing of complex schema types, `$ref` resolution, and multi-server configurations.
+- **Postman collection import** — Better handling of Postman v2.1 collection structures including pre-request scripts, test scripts, and nested folder hierarchies.
+- **OpenAPI export** — More accurate mapping of KeyRunner request parameters to OpenAPI 3.x schema definitions.
+- **Postman collection export** — Fixed edge cases where auth configurations and collection variables were not correctly mapped to the Postman format.
+
+---
+
 ## v1.0.93 (2025-12-20)
 
 ## Enhancements
