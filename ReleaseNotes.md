@@ -1,3 +1,68 @@
+# v1.0.97 (2026-05-27)
+
+## Enhancements
+
+### Response Schema Validation
+
+Added response schema validation support.
+
+Introduced a new diff view in the response panel to compare actual API responses against expected schemas side-by-side.
+
+This makes it easier to identify:
+- Structural changes
+- Missing fields
+- Field mismatches
+
+### Type Generation
+
+Added support to generate typed definitions directly from any API response.
+
+Supported languages include:
+- TypeScript
+- JavaScript
+- Java
+- Kotlin
+- Python
+- Go
+- C#
+- C++
+- Dart
+- Swift
+
+### UI Enhancements
+
+Refined tab styling across request and response panels with:
+- Rounded corners
+- Hover effects
+- Smoother transitions
+
+Improved spacing and visual hierarchy throughout the request builder.
+
+Enhanced input field styling with better environment variable suggestions.
+
+Improved history sidebar presentation.
+
+Improved protocol component layouts for:
+- WebSocket
+- Kafka
+- Socket.IO
+
+---
+
+## v1.0.96 
+### Enhancements 
+Improved UI consistency across request, response, and workspace sections. 
+Enhanced performance and reliability for smoother day-to-day usage. 
+
+---
+
+## v1.0.95 
+### Enhancements 
+Refined layouts, spacing, and component styling across the application.
+Applied stability improvements and minor bug fixes for a better overall experience.
+
+---
+
 ## V1.0.94 (2026-03-02)
 
 ## Enhancements
