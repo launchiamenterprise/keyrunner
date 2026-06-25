@@ -1,4 +1,4 @@
-# 🚀 Introducing KeyRunner 2.0
+# ✨ Introducing KeyRunner 2.0
 
 > **A major release built for better visibility, stronger control, and governed AI actions.**
 
