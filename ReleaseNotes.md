@@ -1,3 +1,78 @@
+# 🚀 Introducing KeyRunner 2.0
+
+> **A major release built for better visibility, stronger control, and governed AI actions.**
+
+## UI Improvements
+
+Refined the overall KeyRunner interface for a cleaner and more consistent experience.
+
+Improvements include:
+
+- Updated navigation and page layouts
+- Improved spacing, visual hierarchy, and component consistency
+- Better workspace, project, and collection management experience
+- Refined request builder and workspace screens
+- General usability improvements across the application
+
+## Manage Dashboard
+
+Added a new **Manage** experience for tenant administrators.
+
+Admins can now view organization-level summaries across managed KeyRunner environments, including:
+
+- Projects
+- Workspaces
+- Collections
+- Requests
+- Request flows
+- AI agents
+- Activity by project
+- Members by project
+- Access logs
+
+This gives administrators better visibility into how KeyRunner is being used across managed workspaces.
+
+> Local workspace activity is not tracked centrally by design.
+
+## Access Logs
+
+Added enhanced access log visibility for managed environments.
+
+Admins can review:
+
+- Login activity
+- Access events
+- User activity
+- Remote IP address
+- Geographic location
+- Access actions and timestamps
+
+## AI Governance Foundation
+
+Introduced the first set of AI governance capabilities behind a feature flag.
+
+This lays the foundation for securely running AI agent actions through KeyRunner with enterprise controls around access, policy, and auditability.
+
+Initial capabilities include support for:
+
+- AI agent onboarding
+- Governed API actions
+- Policy checks before execution
+- Runtime secret injection
+- Approval controls for sensitive write actions
+- Response redaction
+- Audit logs for agent activity
+
+These capabilities are currently available behind a feature flag and will continue to evolve in upcoming releases.
+
+## Fixes
+
+- Fixed scrolling issues across multiple screens and layouts.
+- Improved page behavior for longer content and large workspace views.
+- Addressed minor UI stability and navigation issues.
+
+---
+
 # v1.0.97 (2026-05-27)
 
 ## Enhancements
