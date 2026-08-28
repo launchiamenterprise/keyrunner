@@ -1,3 +1,157 @@
+# v2.0.2 (2026-08-26)
+
+> Build and test APIs, turn them into governed AI tools, and understand how agents use them in production—all from KeyRunner.
+
+## What’s New
+
+### API Workspace and AI Workspace
+
+KeyRunner now provides two focused workspaces:
+
+- **API Workspace** for developing, testing, and debugging APIs.
+- **AI Workspace** for managing AI tools, policies, agents, and production activity.
+
+Developers can move between API development and AI workflows without switching products.
+
+---
+
+### Turn API Requests into AI Tools
+
+Tested API requests can now be exported as governed AI tools.
+
+Developers can:
+
+- Define when an agent should use a tool.
+- Choose which request values the model can provide.
+- Keep credentials and environment values inside KeyRunner.
+- Preview the generated tool definition.
+- Assign tools to policies and agents.
+
+This allows existing APIs to be used by AI agents without exposing credentials or rebuilding integrations.
+
+---
+
+### Create Policies for Agent Tools
+
+Tools can now be grouped into reusable policies and assigned to agents.
+
+Policies help developers control:
+
+- Which tools an agent can use.
+- Where those tools can run.
+- Rate, concurrency, and budget limits.
+- Conditional rules for tool arguments.
+- What kinds of response data can be returned.
+
+KeyRunner also includes templates to help teams create common policies faster.
+
+---
+
+### Production Agent Observability
+
+The new Agent Observability experience provides visibility into how agents use APIs in production.
+
+Developers can review:
+
+- Successful and failed executions.
+- Tools and policies involved.
+- Model and tool-call latency.
+- Token usage and estimated cost.
+- Execution errors.
+- The user who delegated the action.
+
+Activity can be searched and filtered by agent, tool, policy, user, request ID, or execution status.
+
+---
+
+### Agent Trace Graph
+
+Agent executions can now be explored as an interactive graph.
+
+Each trace shows the path through:
+
+- Agent invocation.
+- Model calls.
+- Policy decisions.
+- Tool calls.
+- API responses.
+- Execution failures.
+
+Complex traces can be opened in a dedicated tab and investigated using zooming, panning, search, and grouped repeated calls.
+
+---
+
+### Use Response Values in Requests
+
+Response fields can now be reused directly from the response panel.
+
+A selected field can be:
+
+- Copied as JSONPath.
+- Added as a query parameter.
+- Added as a request header.
+- Saved as an environment variable.
+- Used to create a test assertion.
+
+This reduces the manual work required when chaining requests or building tests.
+
+---
+
+### Response History
+
+Requests now include execution history in the response panel.
+
+Developers can review previous responses, inspect execution metadata, and understand how an API response changed between runs.
+
+---
+
+### KeyRunner for VS Code and Cursor
+
+KeyRunner can now recognize supported API calls inside source code.
+
+Developers can:
+
+- Run an API request from the editor.
+- Review the resolved request before sending it.
+- View the response inside the editor.
+- Open the request in KeyRunner.
+- Convert the API call into a governed AI tool.
+
+Runtime values can be supplied without storing sensitive values in source code.
+
+---
+
+## Experience Improvements
+
+This release includes a major interface refresh across KeyRunner:
+
+- Cleaner API and AI workspace navigation.
+- Improved request builder and response panel.
+- Better environment-variable suggestions and resolved URL previews.
+- More consistent collection, request, and method indicators.
+- Improved universal search.
+- Clearer loading states and notifications.
+- Better console readability.
+- Consistent typography, spacing, tooltips, and scrollbars.
+- Improved light and dark themes.
+- More responsive layouts at different window sizes and zoom levels.
+
+---
+
+## Fixes
+
+- Improved request URL editing and variable suggestions.
+- Fixed cursor behavior when editing recent URLs.
+- Fixed navigation and search results not opening the expected resource.
+- Fixed layout overlap in the application header and footer.
+- Fixed console actions and controls in light and dark themes.
+- Fixed collection expansion indicators and scrolling.
+- Fixed agent activity and observability overflow.
+- Fixed trace graph navigation and readability.
+- Fixed duplicate and incorrectly positioned notifications.
+- Applied additional stability and usability fixes across the application.
+---
+
 # ✨ Introducing KeyRunner 2.0
 
 > **A major release built for better visibility, stronger control, and governed AI actions.**
